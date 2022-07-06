@@ -167,8 +167,8 @@
     background-color: #3f7fbf;
     color: white;
     font-weight: bold;
-    padding: 10px;
-    font-size: 16px;
+    padding: 5px;
+    font-size: 14px;
     border: 2px solid white;
     cursor: pointer;
     transition: 0.5s;
