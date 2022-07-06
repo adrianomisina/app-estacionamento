@@ -1,30 +1,53 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <NavBar :logo="logo_src" :alt="app_name"/>
+  <router-view/>  <!--  As viwes são impresas atraves deste carinha  -->
+  <Footer />
 </template>
 
+<script>
+  import NavBar from '@/components/NavBar'
+  import Footer from '@/components/Footer'
+  
+export default {
+  name:"App",
+  components: {
+    NavBar,
+    Footer
+  },
+
+  data() {
+    return {
+      logo_src:"/img/carro.png",
+      app_name:"Cadastre seu Carro no Estacionamento."
+    }
+  }
+}
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+  }
 
-nav {
-  padding: 30px;
-}
+  body {
+    background-image: url("../public/img/parking.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+  .main-container {
+    margin: 40px;
+    min-height: 82vh;
+  }
 
-nav a.router-link-exact-active {
-  color: #42b983;
-}
+  h1 {
+    text-align: center;
+    font-size: 42px;
+    margin-bottom: 2rem;
+    color: #adadad;
+  }
 </style>
